@@ -1,0 +1,17 @@
+<p>
+  Ma putain de liste de PGM
+</p>
+<div>
+  <li *ngFor="let player of players">
+    <span>{{player.name}} a le niveau {{player.level}}</span>
+    <button [ngStyle]="{ color : getColor()}" (click)="removePlayer(player.id)">Remove</button>
+    <button [disabled]="player && player.state" [ngStyle]="{ color : getColor()}" (click)="nulPlayer(player.id)" >Make Done</button>
+    <button [disabled]="player && player.state" [ngStyle]="{ color : getColorDone(player.state)}">Done</button>
+  </li>
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="namePlayer" placeholder="Name">
+  <input type="text" [(ngModel)]="levelPlayer" placeholder="Level">
+  <button  [ngStyle]="{ color : getColor()}" (click)="addPlayer(namePlayer,levelPlayer)">Add</button>
+</div>

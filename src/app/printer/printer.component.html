@@ -1,0 +1,13 @@
+<p>
+  Mon imprimante {{description.name}}
+</p>
+<button [disabled]="getStatePrinter()">Printer On</button>
+
+<div>
+  <span>Change name :</span>
+  <input type='text' [(ngModel)]="description.name">
+</div>
+
+
+
+<button (click)="changeStatePrinter()">Change Printer State</button>
